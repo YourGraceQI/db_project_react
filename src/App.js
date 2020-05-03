@@ -81,7 +81,7 @@ class App extends Component {
                 />
               </Affix>
               {
-                routerList.map(route => {
+                routerList.map((route) => {
                   return (
                     <PrivateRoute
                       user={user}

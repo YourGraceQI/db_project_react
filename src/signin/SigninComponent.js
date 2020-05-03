@@ -30,7 +30,7 @@ const SigninComponent = () => {
       password: values.password,
     };
     setIsLoadingData(true);
-    requestWithJsonBody(API_SIGNIN, payload, 'post').then(result => {
+    requestWithJsonBody(API_SIGNIN, payload, 'post').then((result) => {
       if (result.error_code === 0) {
         message.success('Login successfully!');
         setIsLoadingData(false);

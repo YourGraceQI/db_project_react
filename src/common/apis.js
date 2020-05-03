@@ -2,6 +2,8 @@ const API_PREFIX = '/insurancesys';
 
 export const API_SIGNIN = `${API_PREFIX}/signin`;
 export const API_SIGNOUT = `${API_PREFIX}/signout`;
+export const API_GET_CUSOTMER = `${API_PREFIX}/customer`;
+export const API_GET_POLICY = `${API_PREFIX}/policy`;
 
 const parseJson = (response) => {
   if (response.status >= 200 && response.status < 300) {

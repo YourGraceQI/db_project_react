@@ -55,7 +55,7 @@ class NavBarComponent extends Component {
     const { user } = this.context;
     const loggedinMenu = [
       this.getMenuLinkItem('Home', Paths.PROFILE, 'home'),
-      this.getMenuLinkItem('Policy', geneartePolicyManagementPath(POLICY_MANAGEMENT_TYPE.VIEW), 'policy'),
+      this.getMenuLinkItem('Policy', Paths.POLICY_VIEW, 'policy'),
     ];
 
     return (

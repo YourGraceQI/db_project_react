@@ -1,8 +1,9 @@
 const Paths = {
   ROOT: '/',
   SIGNIN: '/signin',
-  POLICY: '/policy',
-  POLICY_MANAGEMENT: '/policy/:id?',
+  POLICY_VIEW: '/policy/view',
+  POLICY_CREATE: '/policy/create',
+  POLICY_DETAIL: '/policy/view/:id',
   PROFILE: '/profile',
 };
 
