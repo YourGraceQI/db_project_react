@@ -6,8 +6,7 @@ import { LogoutOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import NavBarLogo from './navBarLogo';
-import Paths, { geneartePolicyManagementPath } from 'common/paths';
-import POLICY_MANAGEMENT_TYPE from 'common/constant';
+import Paths from 'common/paths';
 import UserContext from 'common/utils';
 import { API_SIGNOUT, requestWithJsonBody } from 'common/apis';
 
