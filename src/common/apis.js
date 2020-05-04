@@ -1,9 +1,16 @@
+import { message } from 'antd';
+
 const API_PREFIX = '/insurancesys';
 
 export const API_SIGNIN = `${API_PREFIX}/signin`;
 export const API_SIGNOUT = `${API_PREFIX}/signout`;
 export const API_GET_CUSOTMER = `${API_PREFIX}/customer`;
 export const API_GET_POLICY = `${API_PREFIX}/policy`;
+export const API_GET_HOME = `${API_PREFIX}/home`;
+export const API_GET_VEHICLE = `${API_PREFIX}/vehicle`;
+export const API_GET_DRIVER = `${API_PREFIX}/driver`;
+export const API_GET_INVOICE = `${API_PREFIX}/invoice`;
+export const API_GET_PAYMENT = `${API_PREFIX}/payment`;
 
 const parseJson = (response) => {
   if (response.status >= 200 && response.status < 300) {
@@ -12,12 +19,14 @@ const parseJson = (response) => {
     }
     return response.json();
   }
-  if (response.status >= 400 && response.status < 600) {
-    return response.text().then(text => {
-      throw new Error(`${response.status} ${response.statusText}: ${text}`);
-    });
-  }
-  throw new Error(`${response.status} ${response.statusText}: Unexpected status code`);
+  // if (response.status >= 400 && response.status < 600) {
+  //   return response.text().then(text => {
+  //     // throw new Error(`${response.status} ${response.statusText}: ${text}`);
+  //   });
+  // }
+  // throw new Error(`${response.status} ${response.statusText}: Unexpected status code`);
+  message.error('Internal server error');
+  return {};
 };
 
 export const encodeObjectAsQueryString = (obj) => {

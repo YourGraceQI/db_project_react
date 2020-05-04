@@ -40,9 +40,6 @@ const ProfileComponent = () => {
             ,&nbsp;
             {customerInfo.c_zipcode}
           </Descriptions.Item>
-          {/* <Descriptions.Item label="Status" span={3}>
-          <Badge status="processing" text="Running" />
-        </Descriptions.Item> */}
         </Descriptions>
       </div>
     </Spin>

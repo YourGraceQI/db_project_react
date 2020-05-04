@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import {
   message, Spin, Table,
 } from 'antd';
+import { geneartePolicyManagementPath } from 'common/paths';
+import { Link } from 'react-router-dom';
 import { API_GET_POLICY, getJsonWithQuery } from 'common/apis';
 import Title from 'common/components/Title';
 
@@ -25,11 +27,18 @@ const PolicyListComponent = () => {
       title: 'ID',
       dataIndex: 'policy_id',
       key: 'id',
+      render: (data) => {
+        return (
+          <Link to={geneartePolicyManagementPath(data)}>
+            {data}
+          </Link>
+        );
+      },
     },
     {
       title: 'Type',
       dataIndex: 'policy_type',
-      key: 'type',
+      key: 'policy_type',
     },
     {
       title: 'Premium Amount',
@@ -39,7 +48,7 @@ const PolicyListComponent = () => {
     {
       title: 'Status',
       dataIndex: 'policy_status',
-      key: 'status',
+      key: 'policy_status',
     },
     {
       title: 'Start Date',
