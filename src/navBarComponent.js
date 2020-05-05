@@ -18,12 +18,14 @@ class NavBarComponent extends Component {
 
   logout() {
     const { setUser } = this.context;
+    const { history } = this.props;
 
     requestWithJsonBody(API_SIGNOUT, {}, 'post').then(result => {
       if (result.error_code === 0) {
         message.success('Signout successfully');
         setUser(null);
         localStorage.removeItem('user');
+        history.push(Paths.SIGNIN);
       }
     });
   }

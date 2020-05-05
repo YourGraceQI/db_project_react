@@ -2,7 +2,11 @@ import React, { useState, useContext } from 'react';
 import {
   Form, Input, Button, message, Spin,
 } from 'antd';
-import { API_SIGNIN, requestWithJsonBody } from 'common/apis';
+import { Link } from 'react-router-dom';
+import Paths from 'common/paths';
+import {
+  API_SIGNIN, requestWithJsonBody,
+} from 'common/apis';
 import UserContext from 'common/utils';
 
 const layout = {
@@ -88,6 +92,12 @@ const SigninComponent = () => {
           <Form.Item {...tailLayout}>
             <Button type="primary" htmlType="submit">
               Submit
+            </Button>
+            &nbsp;
+            <Button>
+              <Link to={Paths.SIGNUP}>
+                Sign up
+              </Link>
             </Button>
           </Form.Item>
         </Form>

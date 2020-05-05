@@ -11,6 +11,9 @@ export const API_GET_VEHICLE = `${API_PREFIX}/vehicle`;
 export const API_GET_DRIVER = `${API_PREFIX}/driver`;
 export const API_GET_INVOICE = `${API_PREFIX}/invoice`;
 export const API_GET_PAYMENT = `${API_PREFIX}/payment`;
+export const API_SIGNUP = `${API_PREFIX}/signup`;
+export const API_CHECK_USERNAME = `${API_PREFIX}/check_username`;
+export const API_POST_POLICY = `${API_PREFIX}/policy`;
 
 const parseJson = (response) => {
   if (response.status >= 200 && response.status < 300) {

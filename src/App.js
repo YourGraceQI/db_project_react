@@ -12,6 +12,7 @@ const PrivateRoute = ({
   component: AppComponent, user, path, ...rest
 }) => {
   const isLoginComponent = path === Paths.SIGNIN || path.includes(Paths.SIGNIN);
+  const isSignupComponent = path === Paths.SIGNUP;
 
   return (
     <Route
@@ -28,6 +29,10 @@ const PrivateRoute = ({
           );
         }
         if (user || isLoginComponent) {
+          return <AppComponent {...props} />;
+        }
+
+        if (!user && isSignupComponent) {
           return <AppComponent {...props} />;
         }
 

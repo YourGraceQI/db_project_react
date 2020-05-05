@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import {
-  message, Spin, Table,
+  message, Spin, Table, Button,
 } from 'antd';
-import { geneartePolicyManagementPath } from 'common/paths';
+import Paths, { geneartePolicyManagementPath } from 'common/paths';
 import { Link } from 'react-router-dom';
 import { API_GET_POLICY, getJsonWithQuery } from 'common/apis';
 import Title from 'common/components/Title';
+
 
 const PolicyListComponent = () => {
   const [isLoadingData, setIsLoadingData] = useState(false);
@@ -57,15 +58,22 @@ const PolicyListComponent = () => {
     },
     {
       title: 'End Date',
-      dataIndex: 'enddata',
-      key: 'enddata',
+      dataIndex: 'enddate',
+      key: 'enddate',
     },
   ];
 
   return (
     <Spin spinning={isLoadingData}>
       <div style={{ paddingLeft: 200, paddingRight: 200, paddingTop: 30 }}>
-        <Title title="Your Policys" />
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <Title title="Your Policys" />
+          <Button>
+            <Link to={Paths.POLICY_POST}>
+              Post New Policy
+            </Link>
+          </Button>
+        </div>
         <Table
           columns={columns}
           dataSource={policys}
