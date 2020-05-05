@@ -67,7 +67,6 @@ const PolicyNewComponent = ({ history }) => {
     if (policyType === 'A') {
       delete payload.home;
     }
-    console.log(payload);
     setIsLoadingData(true);
     requestWithJsonBody(API_POST_POLICY, payload, 'post').then((result) => {
       if (result.error_code === 0) {
