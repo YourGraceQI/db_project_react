@@ -49,10 +49,10 @@ const PolicyNewComponent = ({ history }) => {
         purchase_value: values.purchase_value,
         homearea: values.homearea,
         hometype: values.hometype,
-        auto_fire_notification: values.auto_fire_notification,
-        home_security_system: values.home_security_system,
+        auto_fire_notification: Boolean(values.auto_fire_notification),
+        home_security_system: Boolean(values.home_security_system),
         swimming_pool: values.swimming_pool,
-        basement: values.basement,
+        basement: Boolean(values.basement),
       },
     };
     if (payload.startdate) {
